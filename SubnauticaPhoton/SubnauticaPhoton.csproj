@@ -43,8 +43,9 @@
     <Reference Include="Photon3Unity3D">
       <HintPath>..\..\..\Non Steam Games\Subnautica\QMods\SubnauticaOnline\Photon3Unity3D.dll</HintPath>
     </Reference>
-    <Reference Include="PhotonUnity">
-      <HintPath>..\..\..\Non Steam Games\Subnautica\QMods\SubnauticaOnline\PhotonUnity.dll</HintPath>
+    <Reference Include="PhotonUnity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PhotonUnityNetworking\bin\Debug\PhotonUnity.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -60,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FishAISync.cs" />
     <Compile Include="LifepodStartPatch.cs" />
     <Compile Include="MainPatch.cs" />
     <Compile Include="MultiplayerPanel.cs" />
@@ -71,6 +73,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /y "$(TargetDir)$(ProjectName).dll" "D:/Non Steam Games/Subnautica"</PostBuildEvent>
+    <PostBuildEvent>copy /y "$(TargetDir)$(ProjectName).dll" "D:/Non Steam Games/Subnautica/QMods/SubnauticaOnline"</PostBuildEvent>
   </PropertyGroup>
 </Project>

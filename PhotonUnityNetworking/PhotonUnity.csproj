@@ -137,7 +137,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>copy /y "$(TargetDir)$(ProjectName).dll" "D:/Non Steam Games/Subnautica/QMods/SubnauticaOnline"</PostBuildEvent>
   </PropertyGroup>
 </Project>

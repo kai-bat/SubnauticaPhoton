@@ -121,14 +121,7 @@ namespace SubnauticaPhoton
 
             PhotonNetwork.player.SetCustomProperties(playerProps);
 
-            // Probably need to change some properties with these, will do later
-            //PhotonTransformView transView = playerBody.AddComponent<PhotonTransformView>();
-            //transView.m_PositionModel.SynchronizeEnabled = true;
-            //transView.m_RotationModel.SynchronizeEnabled = true;
-
-            //PhotonAnimatorView animView = Player.main.playerAnimator.gameObject.AddComponent<PhotonAnimatorView>();
-            //SetAnimatorProperties(Player.main.playerAnimator, animView);
-
+            // Using a custom class rather than PhotonTransformView and PhotonAnimatorView
             NetPlayerSync positionSync = playerBody.AddComponent<NetPlayerSync>();
             positionSync.animator = playerBody.transform.Find("player_view").GetComponent<Animator>();
 

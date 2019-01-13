@@ -11,7 +11,7 @@ namespace SubnauticaPhoton
     [HarmonyPatch("StartAtPosition")]
     public class LifepodStartPatch
     {
-        public static void Postfix(Vector3 position)
+        public static void Prefix(Vector3 position)
         {
             if(PhotonNetwork.inRoom)
             {

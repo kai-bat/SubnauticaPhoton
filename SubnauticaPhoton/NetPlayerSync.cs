@@ -11,24 +11,24 @@ namespace SubnauticaPhoton
     {
         public Animator animator;
 
-        Vector3 lastPosition = Vector3.zero;
+        Vector3 lastnetworkPosition = Vector3.zero;
         Vector3 lastRotation = Vector3.zero;
-        Vector3 lastVelocity = Vector3.zero;
 
-        Vector3 animVelocity = Vector3.zero;
+        Vector3 previousPosition;
 
         float viewPitch = 0;
         float lerpSpeed = 0.1f;
         bool isUnderwater = false;
 
-        void LateUpdate()
+        void FixedUpdate()
         {
             if (!photonView.isMine)
             {
-                transform.position = Vector3.Lerp(transform.position, lastPosition, lerpSpeed);
+                transform.position = Vector3.Lerp(transform.position, lastnetworkPosition, lerpSpeed);
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(lastRotation), lerpSpeed);
 
-                Debug.Log("Setting animator values for remote player object");
+                Vector3 animVelocity = (transform.position - previousPosition);
+
                 animator.SetFloat("move_speed", animVelocity.magnitude);
                 animator.SetFloat("move_speed_x", animVelocity.x);
                 animator.SetFloat("move_speed_y", animVelocity.y);
@@ -36,6 +36,7 @@ namespace SubnauticaPhoton
 
                 animator.SetFloat("view_pitch", viewPitch);
                 animator.SetBool("isUnderwater", isUnderwater);
+                previousPosition = transform.position;
             }
         }
 
@@ -46,21 +47,16 @@ namespace SubnauticaPhoton
                 stream.SendNext(transform.position);
                 stream.SendNext(transform.eulerAngles);
 
-
-                Vector3 animvel = new Vector3(animator.GetFloat("move_speed_x"), animator.GetFloat("move_speed_y"), animator.GetFloat("move_speed_z"));
-                stream.SendNext(animvel);
                 stream.SendNext(animator.GetFloat("view_pitch"));
                 stream.SendNext(animator.GetBool("isUnderwater"));
             }
             else
             {
-                lastPosition = (Vector3)stream.ReceiveNext();
+                lastnetworkPosition = (Vector3)stream.ReceiveNext();
                 lastRotation = (Vector3)stream.ReceiveNext();
 
-                animVelocity = (Vector3)stream.ReceiveNext();
                 viewPitch = (float)stream.ReceiveNext();
                 isUnderwater = (bool)stream.ReceiveNext();
-                Debug.Log("Receiving animation data from: "+info.sender.NickName);
             }
         }
     }
