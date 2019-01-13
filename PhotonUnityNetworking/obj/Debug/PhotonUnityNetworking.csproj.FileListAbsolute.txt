@@ -1,8 +1,0 @@
-C:\Users\Kyle McGoldrick\Downloads\Github\Nitrox2\PhotonUnityNetworking\obj\Debug\PhotonUnityNetworking.csproj.CoreCompileInputs.cache
-C:\Users\Kyle McGoldrick\Downloads\Github\Nitrox2\PhotonUnityNetworking\bin\Debug\PhotonUnityNetworking.dll
-C:\Users\Kyle McGoldrick\Downloads\Github\Nitrox2\PhotonUnityNetworking\bin\Debug\PhotonUnityNetworking.pdb
-C:\Users\Kyle McGoldrick\Downloads\Github\Nitrox2\PhotonUnityNetworking\bin\Debug\Photon3Unity3D.dll
-C:\Users\Kyle McGoldrick\Downloads\Github\Nitrox2\PhotonUnityNetworking\bin\Debug\UnityEngine.dll
-C:\Users\Kyle McGoldrick\Downloads\Github\Nitrox2\PhotonUnityNetworking\bin\Debug\UnityEngine.UI.dll
-C:\Users\Kyle McGoldrick\Downloads\Github\Nitrox2\PhotonUnityNetworking\obj\Debug\PhotonUnityNetworking.dll
-C:\Users\Kyle McGoldrick\Downloads\Github\Nitrox2\PhotonUnityNetworking\obj\Debug\PhotonUnityNetworking.pdb
