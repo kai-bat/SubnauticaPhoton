@@ -8,6 +8,6 @@ A multiplayer mod for subnautica with automatic matchmaking
 ### TODO
 - Sync lifepod position
 - Sync player animation
-- Create system for automatic sync of objects
+- Create system for automatic sync of objects/fish AI
 
 Feel free to contribute to the repo if you want
