@@ -10,7 +10,8 @@ A multiplayer mod for subnautica with automatic matchmaking
 - Sync player animation
 - Create system for automatic sync of objects/fish AI
 
-Feel free to contribute to the repo if you want
+Feel free to contribute to the repo if you want.
+
 You will have to set up .dll references and post-build events manually to suit your system
 
 Built using QModManager
