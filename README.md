@@ -12,3 +12,5 @@ A multiplayer mod for subnautica with automatic matchmaking
 
 Feel free to contribute to the repo if you want
 You will have to set up .dll references and post-build events manually to suit your system
+
+Built using QModManager
